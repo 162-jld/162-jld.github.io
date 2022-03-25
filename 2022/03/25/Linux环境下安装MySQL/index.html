@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>���鲻������</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Linux环境下安装MySQL一、准备工作软件准备：mysql的Linux版本，官网链接：https:&#x2F;&#x2F;dev.mysql.com&#x2F;downloads&#x2F;mysql&#x2F;5.7.html#downloads  安装环境：CentOS7 二、查询旧版本1rpm -qa | grep mysql  如果查询到了就删除 1234&#x2F;&#x2F;普通删除模式rpm -e mysql_libs   &#x2F;&#x2F; 强力删除模式，如果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="���鲻������">
+<meta property="og:url" content="http://example.com/2022/03/25/Linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85MySQL/index.html">
+<meta property="og:site_name" content="���鲻������">
+<meta property="og:description" content="Linux环境下安装MySQL一、准备工作软件准备：mysql的Linux版本，官网链接：https:&#x2F;&#x2F;dev.mysql.com&#x2F;downloads&#x2F;mysql&#x2F;5.7.html#downloads  安装环境：CentOS7 二、查询旧版本1rpm -qa | grep mysql  如果查询到了就删除 1234&#x2F;&#x2F;普通删除模式rpm -e mysql_libs   &#x2F;&#x2F; 强力删除模式，如果">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="e:/Pictures/Typora-pictures/1647253209879.png">
+<meta property="og:image" content="e:/Pictures/Typora-pictures/1647253300701.png">
+<meta property="og:image" content="e:/Pictures/Typora-pictures/1647253502076.png">
+<meta property="article:published_time" content="2022-03-25T15:04:59.567Z">
+<meta property="article:modified_time" content="2022-03-15T02:55:04.473Z">
+<meta property="article:author" content="Beim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="e:/Pictures/Typora-pictures/1647253209879.png">
+  
+    <link rel="alternate" href="/atom.xml" title="���鲻������" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">���鲻������</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Linux环境下安装MySQL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/03/25/Linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85MySQL/" class="article-date">
+  <time datetime="2022-03-25T15:04:59.567Z" itemprop="datePublished">2022-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux环境下安装MySQL"><a href="#Linux环境下安装MySQL" class="headerlink" title="Linux环境下安装MySQL"></a>Linux环境下安装MySQL</h1><h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><p>软件准备：mysql的Linux版本，官网链接：<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads">https://dev.mysql.com/downloads/mysql/5.7.html#downloads</a></p>
+<p><img src="E:\Pictures\Typora-pictures\1647253209879.png" alt="1647253209879"></p>
+<p>安装环境：CentOS7</p>
+<h2 id="二、查询旧版本"><a href="#二、查询旧版本" class="headerlink" title="二、查询旧版本"></a>二、查询旧版本</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
+
+<p>如果查询到了就删除</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//普通删除模式</span><br><span class="line">rpm -e mysql_libs   </span><br><span class="line">// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除</span><br><span class="line">rpm -e --nodeps mysql_libs    </span><br></pre></td></tr></table></figure>
+
+<h2 id="二、安装步骤"><a href="#二、安装步骤" class="headerlink" title="二、安装步骤"></a>二、安装步骤</h2><h4 id="【1】先利用Xftp将压缩文件拖拽到你想要安装的目录下，这里我把它安装到opt目录下："><a href="#【1】先利用Xftp将压缩文件拖拽到你想要安装的目录下，这里我把它安装到opt目录下：" class="headerlink" title="【1】先利用Xftp将压缩文件拖拽到你想要安装的目录下，这里我把它安装到opt目录下："></a>【1】先利用Xftp将压缩文件拖拽到你想要安装的目录下，这里我把它安装到opt目录下：</h4><p><img src="E:\Pictures\Typora-pictures\1647253300701.png" alt="1647253300701"></p>
+<h4 id="【2】解压缩"><a href="#【2】解压缩" class="headerlink" title="【2】解压缩"></a>【2】解压缩</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf mysql-5.7.37-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h4 id="【3】这时，压缩包已经没有多大作用了，一般是直接删除掉"><a href="#【3】这时，压缩包已经没有多大作用了，一般是直接删除掉" class="headerlink" title="【3】这时，压缩包已经没有多大作用了，一般是直接删除掉"></a>【3】这时，压缩包已经没有多大作用了，一般是直接删除掉</h4><p><img src="E:\Pictures\Typora-pictures\1647253502076.png" alt="1647253502076"></p>
+<h4 id="【4】文件夹的名字太长了，不方便命令调用，重命名一下文件名"><a href="#【4】文件夹的名字太长了，不方便命令调用，重命名一下文件名" class="headerlink" title="【4】文件夹的名字太长了，不方便命令调用，重命名一下文件名"></a>【4】文件夹的名字太长了，不方便命令调用，重命名一下文件名</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv mysql-5.7.37-linux-glibc2.12-x86_64 mysql-5.7.37</span><br></pre></td></tr></table></figure>
+
+<h4 id="【5】创建用户组和用户并修改权限"><a href="#【5】创建用户组和用户并修改权限" class="headerlink" title="【5】创建用户组和用户并修改权限"></a>【5】创建用户组和用户并修改权限</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd mysql</span><br><span class="line">useradd -r -g mysql mysql</span><br></pre></td></tr></table></figure>
+
+<h4 id="【7】创建数据目录并赋予权限"><a href="#【7】创建数据目录并赋予权限" class="headerlink" title="【7】创建数据目录并赋予权限"></a>【7】创建数据目录并赋予权限</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p  /data/mysql              #创建目录</span><br><span class="line">chown mysql:mysql -R /data/mysql   #赋予权限</span><br></pre></td></tr></table></figure>
+
+<h4 id="【8】配置-my-cnf"><a href="#【8】配置-my-cnf" class="headerlink" title="【8】配置    my.cnf"></a>【8】配置    my.cnf</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/my.cnf</span><br></pre></td></tr></table></figure>
+
+<p>配置如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">bind-address=0.0.0.0</span><br><span class="line">port=3306</span><br><span class="line">user=mysql</span><br><span class="line">basedir=/opt/java/mysql-5.7.37  # 你数据库的目录</span><br><span class="line">datadir=/data/mysql</span><br><span class="line">socket=/tmp/mysql.sock</span><br><span class="line">log-error=/data/mysql/mysql.err</span><br><span class="line">pid-file=/data/mysql/mysql.pid</span><br><span class="line">#character config</span><br><span class="line">character_set_server=utf8mb4</span><br><span class="line">symbolic-links=0</span><br><span class="line">explicit_defaults_for_timestamp=true</span><br></pre></td></tr></table></figure>
+
+<h4 id="【9】初始化数据库"><a href="#【9】初始化数据库" class="headerlink" title="【9】初始化数据库"></a>【9】初始化数据库</h4><p>进入到数据库中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/java/mysql-5.7.37</span><br></pre></td></tr></table></figure>
+
+<p>初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./mysqld --defaults-file=/etc/my.cnf --basedir=/opt/java/mysql-5.7.37 --datadir=/data/mysql/ --user=mysql --initialize</span><br></pre></td></tr></table></figure>
+
+<p>查看密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /data/mysql/mysql.err</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/25/Linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85MySQL/" data-id="cl16k2bq50001lov2am544jez" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/03/25/RabbitMQ/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/25/Linux%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/03/25/Linux%E4%B8%8B%E5%AE%89%E8%A3%85JDK/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/25/RabbitMQ/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/25/Linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85MySQL/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/25/Linux%E7%AC%94%E8%AE%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/25/SpringSecurity/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Beim<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
